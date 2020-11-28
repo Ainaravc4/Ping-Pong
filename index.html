@@ -4,19 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="ping-pong.js"></script>
-    <LINK REL="stylesheet" TYPE="text/css" HREF="estilos.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Texturina:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+    <script src="ping-pong.js" type="module"></script>
 </head>
 <body>
-    <header>
-        <h1> Ping-Pong </h1>
-    </header>
-    <section>
-        <div id="tablero">
-        <div id="pala1"></div>
-        <div id="bola"></div>
-        <div id="pala2"></div>
+   
+    <div id="mensaje">
+        <h1> Presiona cualquier tecla para comenzar. </h2>
+    
+    <br>
+    <div id="pautas">
+    <p>Controles para jugar: </p>
+        <ol>
+            <li>Para mover la pala <span id="roja">ROJA</span> utiliza los botones:</li><br>
+            <ul>
+                <li>W: Para deslizar hacia arriba.</li>
+                <li>S: Para deslizar hacia abajo.</li>
+            </ul><br>
+            <li>Para mover la pala  <span id="azul">AZUL</span> utiliza los botones:</li>
+            <ul><br>
+                <li>↑: Para deslizar hacia arriba.</li>
+                <li>↓: Para deslizar hacia abajo.</li>
+            </ul><br>
+        </ol>
     </div>
-    </section>
+    </div>
+    <center>
+    <img id="uno" class="ar" src="arriba1.png">
+    <img id="dos" class="ab"src="abajo1.png">
+
+    <img id="tres" class="ar uno"src="arriba2.png">
+    <img id="cuatro" class="ab dos"src="abajo2.png">
+</center>
 </body>
 </html>
