@@ -18,6 +18,13 @@ function comenzarPartida(){
         if (juego2.reiniciarPartida())
             juego2=null;
     }); 
+    window.addEventListener("touchend",()=>{
+        if(juego2==null){
+            juego2=new juego();   
+        }
+        if (juego2.reiniciarPartida())
+            juego2=null;
+    }); 
 }
 
 
