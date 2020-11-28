@@ -15,8 +15,8 @@ Para poder jugar se tiene primero que instanciar el juego en el main, donde el p
 - La puntuacion
 - El ganador
 
-En el main también es necesario especificarle los eventos que tendrán el movimiento de las palas, con los metodos moverPala(), y clicarPala().
-Este éltimo método ha sido para practicar con los eventos táctiles.
+En el main también es necesario especificarle los eventos que tendrán los movimientos de las palas, con los métodos moverPala(), y clicarPala().
+Este último método ha sido para practicar con los eventos táctiles.
 
 Enlace para jugar:
 https://ainaravc4.github.io/Ping-Pong/
