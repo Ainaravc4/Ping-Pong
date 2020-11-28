@@ -34,13 +34,23 @@ span#roja{
 span#azul{
     color: blue;
 }
-img.ar{
-    width: 3.5rem;
-    margin-right: 3rem;
+
+#imagenes{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    
+    
 }
-img.ab{
-    width: 6rem;
+img#uno-1, img#dos-1{
+    width: 4rem;  
 }
-img.uno{
-    margin-left: 50rem;
+
+
+
+img#uno-2, img#dos-2{
+    width: 7rem;
 }
+
+
+

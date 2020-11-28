@@ -1,13 +1,13 @@
 
-//porque en  el depurador me da error la funcion mover pala
+//porque en  el depurador me da error la funcion mover pala, preguntar a Jose
 
 class juego{
     constructor(){
         
         this.espacio=new espacio(1500,1000);
-        this.pala1=new pala(10,350,30,200,"red");
-        this.pala2=new pala(1460,350,30,200,"blue");
-        this.bola= new bola(450,450,30,"white",4,4);
+        this.pala1=new pala(10,350,30,200,"red","pala1");
+        this.pala2=new pala(1460,350,30,200,"blue","pala2");
+        this.bola= new bola(650,450,30,"white",4,4);
        
         this.espacio.pintarSVG();
         this.pala1.pintarPala();
@@ -27,18 +27,12 @@ class juego{
 
         this.espacio.dibujarPuntuacion();
 
-        this.final= this.animarBola(score1,score2); 
+        this.animarBola(score1,score2); 
         this.animarPala(); 
        
     }
 
-    reiniciarPartida(){
-        if(this.final==1 || this.final==2){
-            return true
-        }
-        return false;
-    }
-    
+
     animarBola(score1,score2){
         this.intevalo= setInterval(()=>{
 
@@ -52,26 +46,19 @@ class juego{
 
             this.espacio.actualizarPuntuacion(score1,score2);
 
-            let final=0;
             if(score1==2){
                 this.espacio.dibujarGanador("Rojo");
-                clearInterval(this.intevalo);
-                final=1;
-                
+                clearInterval(this.intevalo);  
             }
             if(score2==2){
                 this.espacio.dibujarGanador("Azul");
-                clearInterval(this.intevalo);
-                final=2;
-                
+                clearInterval(this.intevalo);   
             } 
-            return final;  
         },7);
     }
 
     animarPala(){
         setInterval(()=>{
-            //Moviento de las palas con el teclado
             if(this.subirPala1){
                 this.pala1.moverAbajo();
                 this.pala1.actualizaVista();
@@ -197,6 +184,7 @@ class bola{
             this.incX*=-1;
         }
 
+        //Actualizar coordenadas bola
         this.x+=this.incX;
         this.y+=this.incY;
         this.circle.setAttribute("cx",this.x);
@@ -227,12 +215,13 @@ class bola{
 
 class pala{
     
-    constructor(x,y,ancho,alto,color){
+    constructor(x,y,ancho,alto,color,id){
         this.palay1=y;
         this.palax1=x;
         this.palasAncho=ancho;
         this.palasAlto=alto;
         this.color=color;
+        this.id=id;
     }
     pintarPala(){
         this.espacio=document.getElementById("espacio");
@@ -243,6 +232,7 @@ class pala{
         this.rect.setAttribute("height",this.palasAlto);
         this.rect.setAttribute("id","pala");
         this.rect.setAttribute("fill",this.color)
+        this.rect.setAttribute("id",this.id)
         
         this.espacio.appendChild( this.rect);
     }
